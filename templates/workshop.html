@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop on Generative Artificial Intelligence (GenAl)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            color: #333;
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+        
+        .sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('/static/desktop-wallpaper-electricity-electricity-backgrounds-electric-power.jpg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            background-blend-mode:soft-light;
+    
+        }
+        #heading{
+            font-family:cursive;
+        }
+        #name{
+            color: #ff5722;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin: 15px 0;
+        }
+
+        .header1 h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .section-title {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #4CAF50;
+        }
+        .project-list, .prerequisites, .contact-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .project-list li, .prerequisites li, .contact-list li {
+            margin-bottom: 10px;
+        }
+        .project-list li::before, .prerequisites li::before, .contact-list li::before {
+            content: "✔";
+            color: #4CAF50;
+            margin-right: 10px;
+        }
+        .contact-list {
+            padding: 0;
+        }
+        .contact-item {
+            margin-bottom: 10px;
+        }
+        .register-button {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .register-button a {
+            background: #28a745;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+        }
+        .register-button a:hover {
+            background: #218838;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #333;
+            color: #fff;
+        }
+        .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #1e90ff;
+    opacity: 90%;
+}
+
+/* Media Queries */
+@media (max-width: 480px) {
+            .logo {
+            font-size: 15px;
+            font-weight: bold;
+        }
+        
+        }
+
+        /* Media Query for low resolution  Tablets, Ipads */
+        @media (min-width: 481px) and (max-width: 767px) {
+            .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+            .sidenav {
+            height: 100%; /* 100% Full-height */
+            width: 0; /* 0 width - change this with JavaScript */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Stay on top */
+            top: 0; /* Stay at the top */
+            left: 0;
+            background-color: #111; /* Black*/
+            overflow-x: hidden; /* Disable horizontal scroll */
+            padding-top: 20px; /* Place content 60px from the top */
+            transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+            }
+
+            /* The navigation menu links */
+            .sidenav a {
+            padding: 6px 6px 6px 20px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+            }
+        }
+
+        /* Media Query for Tablets Ipads portrait mode */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+        
+            .sidenav {
+            height: 100%; /* 100% Full-height */
+            width: 0; /* 0 width - change this with JavaScript */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Stay on top */
+            top: 0; /* Stay at the top */
+            left: 0;
+            background-color: #111; /* Black*/
+            overflow-x: hidden; /* Disable horizontal scroll */
+            padding-top: 50px; /* Place content 60px from the top */
+            transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+            }
+
+            /* The navigation menu links */
+            .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+            }
+        }
+
+        /* Media Query for Laptops and Desktops */
+        @media (min-width: 1025px) and (max-width: 1280px) {
+            .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+        
+            .sidenav {
+            height: 100%; /* 100% Full-height */
+            width: 0; /* 0 width - change this with JavaScript */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Stay on top */
+            top: 0; /* Stay at the top */
+            left: 0;
+            background-color: #111; /* Black*/
+            overflow-x: hidden; /* Disable horizontal scroll */
+            padding-top: 20px; /* Place content 60px from the top */
+            transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+            }
+
+            /* The navigation menu links */
+            .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+            }
+        }
+
+    </style>
+</head>
+<body style="background: url(/static/back-oth.jpeg); opacity: 95%;">
+    <header>
+        <center>
+        <div class="logo" style="font-family: 'Courier New', Courier, monospace;">
+            <font color="#FF2626">E</font>
+            <font color="#667BC6">c</font>
+            <font color="#F1E5D1">l</font>
+            <font color="#FFD523">E</font>
+            <font color="#71EFA3">c</font>
+            <font color="#0F52BA">t</font>
+            <font color="#66CC66">i</font>
+            <font color="#FF9966">q</font>
+            <font color="#FFCCCC">u</font>
+            <font color="#00C1D4">E</font>
+            <font color="#EFE3D0">2k24</font>
+        <!-- <img src="/static/ecl.png" alt="" style="width: 5%; height: 5%;"> -->
+        </div></center>
+        <nav>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="{% url 'Home' %}">Home</a>
+                <a href="{% url 'workshop' %}">Workshop</a>
+                <a href="{% url 'tech' %}">Technical Events</a>
+                <a href="{% url 'non-tech' %}">Non-Technical Events</a>
+                <a href="{% url 'flashmob' %}">FlashMob</a>
+                <a href="{% url 'cultural' %}">Cultural Night</a>
+                <a href="{% url 'register' %}">Register</a>
+                <a href="{% url 'contact' %}">Contact</a>
+                <a href="{% url 'nav' %}">Loaction</a>
+              </div>
+        </nav>
+        <!-- Use any element to open the sidenav -->
+      <span onclick="openNav()"><img src="/static/icons8-menu-50 (1).png" alt="Home button" style="width: 35px; height: 35px;"></span>
+      <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+      }
+      
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+    </script>
+
+    </header>
+
+    <header1>
+        <center><h1>Workshop on Generative Artificial Intelligence (GenAl)</h1></center>
+        <div class="register-button">
+            <center><a href="#">Register Now</a></center>
+        </div>
+    </header1>
+    <div class="container">
+        <section>
+            <p>Welcome to the Workshop on Generative Artificial Intelligence (GenAl), where innovation meets intelligence! GenAl represents the cutting-edge fusion of Generative Models and Artificial Intelligence, paving the way for groundbreaking advancements in machine creativity. Join us as we embark on an enlightening journey into the realm of GenAl, exploring its potential to revolutionize various domains and drive innovation forward.</p>
+        </section>
+
+        <section>
+            <h2 class="section-title">Projects</h2>
+            <ul class="project-list">
+                <li>Random Image Generation: Unleashing the power of generative models to create diverse and unique images.</li>
+                <li>Conditional Image Generation: Harnessing GenAl to generate images based on specific conditions or criteria.</li>
+                <li>Image Reconstruction with VAEs: Utilizing Variational Autoencoders (VAEs) to reconstruct images from incomplete or corrupted data.</li>
+                <li>Conditional Image Generation for Image Recognition of Electrical Components: Leveraging GenAl for enhanced image recognition and analysis of electrical components.</li>
+                <li>Fault Detection in Power Systems: Applying GenAl techniques to detect and diagnose faults in power systems, improving reliability and efficiency.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 class="section-title">Prerequisites</h2>
+            <ul class="prerequisites">
+                <li>A Smartphone with Working Internet. Participants should bring their own laptops.</li>
+                <li>Power supply will be provided.</li>
+                <li>Bring your own required equipment like adapters.</li>
+                <li>Every candidate should have sufficient internet by their own.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 class="section-title">Registration</h2>
+            <p>Fee: 899/-</p>
+            <p>Eligibility: Open to all students from all engineering branches & degree students from first year to final year. No programming skills required, just a curious mind.</p>
+            <p>Certification: All participants will receive a Participation Certificate from ARC LAB'S, VisionX Lab & IIT BHU with a unique certificate ID.</p>
+        </section>
+
+        <section>
+            <h2 class="section-title">Workshop Timings</h2>
+            <p>Day 1: 26th February, 9:30 AM to 5:00 PM</p>
+            <p>Day 2: 27th February, 8:00 AM to 3:00 PM</p>
+            <p>Venue: Auditorium, Academic Block-2, JNTU-GV CEV(A)</p>
+        </section>
+
+        <section>
+            <h2 class="section-title">Contact</h2>
+            <ul class="contact-list">
+                <li class="contact-item"><strong>Faculty coordinators:</strong> Sri.Ch.Venkata Ramana, Asst. Prof.(C) - 9441567983, Smt.S.Rajitha, Asst. Prof.(C) - 9553653769</li>
+                <li class="contact-item"><strong>Student coordinators:</strong> A. Tharun Kumar - 8008059713, M. Sohan - 8074900974, U. Janakeswari, M. Keren Sunada</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 class="section-title">Workshop Description</h2>
+            <p><strong>Project 1: Simple GAN for Random Image Generation</strong></p>
+            <p>Basic GAN Architecture: Explanation of generator and discriminator components. Introduction to loss functions (e.g., binary cross-entropy). Implementing GAN Model in TensorFlow/PyTorch: Step-by-step code walkthrough. Training the model on a simple dataset (e.g., MNIST). Generating Random Images: Visualizing the generated images. Discussing challenges and potential improvements.</p>
+
+            <p><strong>Project 2: Conditional Image Generation</strong></p>
+            <p>Implementing a Conditional GAN: Modifying the GAN architecture for conditional generation. Coding exercises for conditional image synthesis. Training on a Labeled Dataset: Introduction to labeled datasets (e.g., CelebA). Fine-tuning the model for specific attribute conditioning. Generating Images Conditioned on Specific Attributes: Demonstrating the model's ability to generate images with desired attributes. Evaluating results and potential improvements.</p>
+
+            <p><strong>Project 3: Image Reconstruction with VAEs</strong></p>
+            <p>Implementing a VAE for Image Reconstruction: Coding a VAE model for image reconstruction. Analyzing reconstruction quality and limitations. Analyzing the Latent Space: Visualizing the learned latent space. Discussing the impact of latent variables on image generation.</p>
+
+            <p><strong>Project 4: AI-Based Image Recognition for Electrical Components</strong></p>
+            <p>Description: Develop an image recognition system using deep learning to automatically identify and classify various electrical components, including resistors, capacitors, and transistors, from images. Skills: Participants will gain expertise in computer vision, deep learning, and image processing through this project.</p>
+
+            <p><strong>Project 5: Fault Detection in Power Systems</strong></p>
+            <p>Description: Implement an AI-powered system for real-time fault detection in power distribution systems. Utilize machine learning algorithms, particularly deep learning techniques, to analyze sensor data. The goal is to identify anomalies that could indicate faults or abnormalities in the power system. Skills: Participants will develop skills in signal processing, machine learning, and gain insights into power systems through this project.</p>
+        </section>
+
+        <section>
+            <h2 class="section-title">Benefits of the Workshop</h2>
+            <ul class="prerequisites">
+                <li>Skill development in programming and data analysis.</li>
+                <li>Exposure to emerging Generative AI technologies.</li>
+                <li>Enhanced problem-solving capabilities.</li>
+                <li>Networking opportunities within the Generative AI community.</li>
+                <li>Increased career prospects and industry relevance.</li>
+                <li>You will be able to participate in any Tech-fest in IIT Varanasi for Technex’24.</li>
+            </ul>
+        </section>
+    </div>
+
+    <div class="register-button">
+        <a href="{% url 'register' %}">Register Now</a>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Eclectique 2k24, All Rights Reserved.</p>
+        <p>Desgined & Developed by: K.Kartheek</p>
+    </footer>
+</body>
+</html>

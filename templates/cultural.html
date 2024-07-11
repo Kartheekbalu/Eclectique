@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultural Night</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('/static/cult.gif') no-repeat center center/cover;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+        
+        .sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+        .content {
+            flex: 1;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            margin: 2rem auto;
+            width: 80%;
+            border-radius: 10px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: tomato;
+        }
+        .footer {
+            text-align: center;
+            background: #333;
+            color: #fff;
+        }
+        .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #1e90ff;
+    opacity: 90%;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <center>
+        <div class="logo" style="font-family: 'Courier New', Courier, monospace;">
+            <font color="#FF2626">E</font>
+            <font color="#667BC6">c</font>
+            <font color="#F1E5D1">l</font>
+            <font color="#FFD523">E</font>
+            <font color="#71EFA3">c</font>
+            <font color="#0F52BA">t</font>
+            <font color="#66CC66">i</font>
+            <font color="#FF9966">q</font>
+            <font color="#FFCCCC">u</font>
+            <font color="#00C1D4">E</font>
+            <font color="#EFE3D0">2k24</font>
+        <!-- <img src="/static/ecl.png" alt="" style="width: 5%; height: 5%;"> -->
+        </div></center>
+        <nav>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="{% url 'Home' %}">Home</a>
+                <a href="{% url 'workshop' %}">Workshop</a>
+                <a href="{% url 'tech' %}">Technical Events</a>
+                <a href="{% url 'non-tech' %}">Non-Technical Events</a>
+                <a href="{% url 'flashmob' %}">FlashMob</a>
+                <a href="{% url 'cultural' %}">Cultural Night</a>
+                <a href="{% url 'register' %}">Register</a>
+                <a href="{% url 'contact' %}">Contact</a>
+                <a href="{% url 'nav' %}">Loaction</a>
+              </div>
+        </nav>
+        <!-- Use any element to open the sidenav -->
+      <span onclick="openNav()"><img src="/static/icons8-menu-50 (1).png" alt="Home button" style="width: 35px; height: 35px;"></span>
+      <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+      }
+      
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+    </script>
+
+    </header>
+    <div class="content">
+        <h1>Cultural Night</h1>
+        <p>Come experience the crazy cultural night...</p>
+        <p>Multiple dance and cultural performances</p>
+        <p>26th February 6:00 PM to 8:00 PM</p>
+        <p>In College Ground, JNTUGV</p>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 Eclectique 2k24, All Rights Reserved.</p>
+        <p>Designed & Developed by: K.Kartheek</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height:100%;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        form label {
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        form input,
+        form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        form input[type="file"] {
+            border: none;
+            margin: 10px 0;
+        }
+        form p {
+            margin: 20px 0 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+        form img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+        form input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        @media screen and (max-width: 480px) {
+            form{
+                max-width: 80%;
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body style="background: url(/static/back-fin.jpg); opacity: 90%;">
+    <form action="" method="post">
+        {% csrf_token %}
+        <header1>
+            <center><h1>Register for Events</h1></center>
+        </header1>
+
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" placeholder="Name" required>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="Email" required>
+
+        <label for="college">College</label>
+        <input type="text" name="college" id="college" placeholder="College" required>
+
+        <label for="phone">Phone</label>
+        <input type="number" name="phone" id="phone" placeholder="Phone" required>
+
+        <label for="year">Year</label>
+        <select name="year" id="year" required>
+            <option value="" disabled selected>Year</option>
+            <option value="1">I Year</option>
+            <option value="2">II Year</option>
+            <option value="3">III Year</option>
+            <option value="4">IV Year</option>
+        </select>
+
+        <label for="branch">Branch</label>
+        <input type="text" name="branch" id="branch" placeholder="Branch" required>
+
+        <label for="district">District</label>
+        <input type="text" name="district" id="district" placeholder="District" required>
+
+        <label for="gender">Gender</label>
+        <select name="gender" id="gender" required>
+            <option value="" disabled selected>Gender</option>
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+            <option value="Oth">Other</option>
+        </select>
+
+        <label for="food">Food Preference</label>
+        <select name="food" id="food" required>
+            <option value="" disabled selected>Food Preference</option>
+            <option value="veg">Vegetarian</option>
+            <option value="non-veg">Non-Vegetarian</option>
+            <option value="Oth">No Thanks</option>
+        </select>
+
+        <label>Select Event:</label>
+        <div class="checkbox-group">
+            <label for="workshop">
+                Workshop (Gen-Al)
+                <input type="checkbox" id="workshop" name="event" value="workshop">
+            </label>
+            <label for="electracon">
+                Electracon
+                <input type="checkbox" id="electracon" name="event" value="exhibition">
+            </label>
+            <label for="sparktech">
+                SparkTech
+                <input type="checkbox" id="sparktech" name="event" value="tech quiz">
+            </label>
+            <label for="projectexpo">
+                Project-Expo
+                <input type="checkbox" id="projectexpo" name="event" value="project expo">
+            </label>
+            <label for="paperpresentation">
+                Paper Presentation
+                <input type="checkbox" id="paperpresentation" name="event" value="presentation">
+            </label>
+            <label for="pixelparty">
+                Pixel Party
+                <input type="checkbox" id="pixelparty" name="event" value="photo">
+            </label>
+            <label for="artmania">
+                Art Mania
+                <input type="checkbox" id="artmania" name="event" value="art">
+            </label>
+            <label for="blinkbrain">
+                Blink Brain
+                <input type="checkbox" id="blinkbrain" name="event" value="game">
+            </label>
+            <label for="mystichunt">
+                Mystic Hunt
+                <input type="checkbox" id="mystichunt" name="event" value="hunt">
+            </label>
+            <label for="quiziq">
+                Quiz IQ
+                <input type="checkbox" id="quiziq" name="event" value="nontech quiz"> 
+            </label>
+        </div>
+
+        <p>Scan Here to Pay....</p>
+        <img src="/static/scanner.jpeg" alt="Payment QR Code">
+
+        <label for="proof">Upload Proof of Payment</label>
+        <input type="file" name="proof" id="proof" required>
+
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>

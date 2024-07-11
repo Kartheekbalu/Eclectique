@@ -1,0 +1,486 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Events</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f8f9fa;
+            color: #333;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+        
+        .sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 10px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+/* @media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+} */
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('/static/desktop-wallpaper-electricity-electricity-backgrounds-electric-power.jpg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            background-blend-mode:soft-light;
+    
+        }
+        #heading{
+            font-family:cursive;
+        }
+        #name{
+            color: #ff5722;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin: 15px 0;
+        }
+
+        .header1 h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        .event {
+            border: 2px solid #007BFF;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .event h2 {
+            color: #007BFF;
+            margin-top: 0;
+        }
+        .event p, .event ul {
+            margin: 10px 0;
+        }
+        .event ul {
+            padding-left: 20px;
+        }
+        .event .details {
+            flex: 1;
+        }
+        .event .image {
+            margin-left: 20px;
+        }
+        .event .image img {
+            max-width: 300px;
+            border-radius: 8px;
+        }
+        .event .contact {
+            margin-top: 15px;
+        }
+        .contact p {
+            margin: 5px 0;
+        }
+        .register-button {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+        }
+        .register-button a {
+            background: #28a745;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+        }
+        .register-button a:hover {
+            background: #218838;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #333;
+            color: #fff;
+            margin-top: 20px;
+        }
+        
+
+        /* Media queries */
+        @media (max-width: 480px) {
+            .logo {
+            font-size: 15px;
+            font-weight: bold;
+        }
+        
+            .sidenav {
+            height: 100%; /* 100% Full-height */
+            width: 0; /* 0 width - change this with JavaScript */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Stay on top */
+            top: 0; /* Stay at the top */
+            left: 0;
+            background-color: #111; /* Black*/
+            overflow-x: hidden; /* Disable horizontal scroll */
+            padding-top: 20px; /* Place content 60px from the top */
+            transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+            }
+
+            /* The navigation menu links */
+            .sidenav a {
+            padding: 4px 4px 4px 16px;
+            text-decoration: none;
+            font-size: 15px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+            }
+        }
+
+        /* Media Query for low resolution  Tablets, Ipads */
+        @media (min-width: 481px) and (max-width: 767px) {
+            .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+            .sidenav {
+            height: 100%; /* 100% Full-height */
+            width: 0; /* 0 width - change this with JavaScript */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Stay on top */
+            top: 0; /* Stay at the top */
+            left: 0;
+            background-color: #111; /* Black*/
+            overflow-x: hidden; /* Disable horizontal scroll */
+            padding-top: 20px; /* Place content 60px from the top */
+            transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+            }
+
+            /* The navigation menu links */
+            .sidenav a {
+            padding: 6px 6px 6px 20px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+            }
+        }
+
+        /* Media Query for Tablets Ipads portrait mode */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+        
+            .sidenav {
+            height: 100%; /* 100% Full-height */
+            width: 0; /* 0 width - change this with JavaScript */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Stay on top */
+            top: 0; /* Stay at the top */
+            left: 0;
+            background-color: #111; /* Black*/
+            overflow-x: hidden; /* Disable horizontal scroll */
+            padding-top: 50px; /* Place content 60px from the top */
+            transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+            }
+
+            /* The navigation menu links */
+            .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+            }
+        }
+
+        /* Media Query for Laptops and Desktops */
+        @media (min-width: 1025px) and (max-width: 1280px) {
+            .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+        
+            .sidenav {
+            height: 100%; /* 100% Full-height */
+            width: 0; /* 0 width - change this with JavaScript */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Stay on top */
+            top: 0; /* Stay at the top */
+            left: 0;
+            background-color: #111; /* Black*/
+            overflow-x: hidden; /* Disable horizontal scroll */
+            padding-top: 20px; /* Place content 60px from the top */
+            transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+            }
+
+            /* The navigation menu links */
+            .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+            }
+        }
+    </style>
+</head>
+<body style="background: url(/static/elec.jpg); opacity: 95%;">
+    <header>
+        <center>
+        <div class="logo" style="font-family: 'Courier New', Courier, monospace;">
+            <font color="#FF2626">E</font>
+            <font color="#667BC6">c</font>
+            <font color="#F1E5D1">l</font>
+            <font color="#FFD523">E</font>
+            <font color="#71EFA3">c</font>
+            <font color="#0F52BA">t</font>
+            <font color="#66CC66">i</font>
+            <font color="#FF9966">q</font>
+            <font color="#FFCCCC">u</font>
+            <font color="#00C1D4">E</font>
+            <font color="#EFE3D0">2k24</font>
+        <!-- <img src="/static/ecl.png" alt="" style="width: 5%; height: 5%;"> -->
+        </div></center>
+        <nav>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="{% url 'Home' %}">Home</a>
+                <a href="{% url 'workshop' %}">Workshop</a>
+                <a href="{% url 'tech' %}">Technical Events</a>
+                <a href="{% url 'non-tech' %}">Non-Technical Events</a>
+                <a href="{% url 'flashmob' %}">FlashMob</a>
+                <a href="{% url 'cultural' %}">Cultural Night</a>
+                <a href="{% url 'register' %}">Register</a>
+                <a href="{% url 'contact' %}">Contact</a>
+                <a href="{% url 'nav' %}">Loaction</a>
+              </div>
+        </nav>
+        <!-- Use any element to open the sidenav -->
+      <span onclick="openNav()"><img src="/static/icons8-menu-50 (1).png" alt="Home button" style="width: 35px; height: 35px;"></span>
+      <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+      }
+      
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+    </script>
+
+    </header>
+    <header1>
+        <center><h1 style="color: rgb(208, 36, 30);"><b>Technical Events</b></h1></center>
+    </header1>
+
+    <div class="container">
+        <section class="event">
+            <div class="details">
+                <h2>1. Electracon</h2>
+                <p><strong>Venue:</strong> Behind Academic Block-1</p>
+                <p><strong>Entry Fee:</strong> 30/-</p>
+                <p>Electracon introduces an amazing collection of electrical equipment for hands-on exploration! Discover the thrill of learning with real-life experience. Dive into exhibits to grasp technical instruments and expand your knowledge as an Electrical Engineer!</p>
+                <p>The exhibition's funds support a virtuous cause! Every profit helps an orphanage and creates a better future for those in need. Come join us for an enchanting journey into Electrical Engineering at Electracon and make a meaningful impact!</p>
+                <div class="contact">
+                    <p><strong>For Further Details Contact:</strong></p>
+                    <p>B. Deepak - 8332887368</p>
+                    <p>P. Kalyani</p>
+                </div>
+            </div>
+            <div class="image">
+                <img src="/static/electracon.png" alt="Electracon">
+            </div>
+            <div class="register-button">
+                <a href="{% url 'register' %}">Register Now</a>
+            </div>
+        </section>
+
+        <section class="event">
+            <div class="details">
+                <h2>2. Spark Tech</h2>
+                <p><strong>Venue:</strong> Academic Block-1</p>
+                <p><strong>Participation Fee:</strong> 60/-</p>
+                <p>Spark Tech, a super exciting technical quiz that tests participants' academic knowledge.</p>
+                <p><strong>Structure of the Event:</strong></p>
+                <ul>
+                    <li>🔋 Round 1: Participants will group up and take a quiz.</li>
+                    <li>🔋 Round 2: Chosen teams will encounter a blank-filling test.</li>
+                    <li>🔋 Round 3: A few chosen groups will receive questions with multiple options.</li>
+                    <li>🔋 Round 4: The best groups from previous rounds will participate in a rapid-fire round.</li>
+                </ul>
+                <p>😎 <strong>Eligibility:</strong> All engineering students, no matter their year, are welcome!</p>
+                <p>🎓 <strong>Certification:</strong> All participants will receive a participation certificate!</p>
+                <p>Join Us and follow these instructions with extreme excitement!</p>
+                <ul>
+                    <li>🤝 All questions are based on EEE department subjects only.</li>
+                    <li>🤝 Groups will be formed by the event coordinator.</li>
+                    <li>🤝 Formation of groups by yourself will be unacceptable.</li>
+                </ul>
+                <div class="contact">
+                    <p><strong>For Further Details Contact:</strong></p>
+                    <p>M. B. S. Radha Krishna - 9502048666</p>
+                    <p>A. Jayasri</p>
+                </div>
+            </div>
+            <div class="image">
+                <img src="/static/tech quiz.png" alt="Spark Tech">
+            </div>
+            <div class="register-button">
+                <a href="register.html">Register Now</a>
+            </div>
+        </section>
+
+        <section class="event">
+            <div class="details">
+                <h2>3. Project Expo</h2>
+                <p><strong>Venue:</strong> Electrical Machines Lab, Academic Block-1</p>
+                <p><strong>Entry Fee:</strong></p>
+                <ul>
+                    <li>For One or Two participants: 200 rupees</li>
+                    <li>For Three or Four participants: 350 rupees</li>
+                </ul>
+                <p>Project Expo is all about showcasing innovation! We are excited to highlight the creativity of our participants. Get ready to unveil your projects and impress our esteemed judges. Teams can have up to four members. Let’s make this event a success.</p>
+                <p>😎 <strong>Eligibility:</strong> Open to all engineering students! All degree students are welcome! From first year to final year! Join us now!</p>
+                <p>🎓 <strong>Certification:</strong> All participants will receive a participation certificate.</p>
+                <p>Get Excited and follow along:</p>
+                <ul>
+                    <li>⚡️ Power supply will be provided to all participants.</li>
+                    <li>⚡️ Make sure your project works.</li>
+                </ul>
+                <div class="contact">
+                    <p><strong>For Further Details Contact:</strong></p>
+                    <p>S. Harsha Vardhan - 9390011924</p>
+                    <p>E. Poorna</p>
+                </div>
+            </div>
+            <div class="image">
+                <img src="/static/expo.png" alt="Project Expo">
+            </div>
+            <div class="register-button">
+                <a href="register.html">Register Now</a>
+            </div>
+        </section>
+
+        <section class="event">
+            <div class="details">
+                <h2>4. Paper Presentation</h2>
+                <p><strong>Venue:</strong> Academic Block-1</p>
+                <p><strong>Participation Fee:</strong></p>
+                <ul>
+                    <li>For individual participation: 60/-</li>
+                    <li>For two participants: 100/-</li>
+                </ul>
+                <p>Paper Presentation! Enhance speaking skills! Alleviate stage fear! All students! Cultivate self-confidence! Engage in presentations! Show your abilities! 6 minutes! Be the winner!</p>
+                <p>😎 <strong>Eligibility:</strong> Open to all engineering students and degree students from first to final year! Join now!</p>
+                <p>🎓 <strong>Certification:</strong> Every candidate gets a participation certificate for oral presentation!</p>
+                <p><strong>Topics:</strong> Advance in Field of Science, Technology, Engineering, and Mathematics.</p>
+                <p><strong>Instructions to the Participants:</strong> Your presentation needs to be super concise with only 10 to 12 slides.</p>
+                <p><strong>Do Not Miss these Dates:</strong></p>
+                <ul>
+                    <li>🤜 Abstract submission: 21st Feb 2024</li>
+                    <li>🤜 Intimation on Abstract Selection: 23rd Feb 2024</li>
+                    <li>🤜 Submission of Final presentation: 26th Feb 2024</li>
+                </ul>
+                <div class="contact">
+                    <p><strong>For Further Details Contact:</strong></p>
+                    <p>N. Sai Teja - 7569556621</p>
+                    <p>K. Damayanthi</p>
+                </div>
+            </div>
+            <div class="image">
+                <img src="/static/paper.png" alt="Paper Presentation">
+            </div>
+            <div class="register-button">
+                <a href="register.html">Register Now</a>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Eclectique 2k24, All Rights Reserved.</p>
+        <p>Desgined & Developed by: K.Kartheek</p>
+    </footer>
+</body>
+</html>

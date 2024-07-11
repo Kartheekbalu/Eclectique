@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+        
+        .sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('/static/desktop-wallpaper-electricity-electricity-backgrounds-electric-power.jpg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            background-blend-mode:soft-light;
+    
+        }
+        #heading{
+            font-family:cursive;
+        }
+        #name{
+            color: #ff5722;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin: 15px 0;
+        }
+
+        .header1 h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        .event {
+            display: flex;
+            align-items: center;
+            border: 2px solid #28a745;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+        .event h2 {
+            color: #28a745;
+        }
+        .event-content {
+            flex: 1;
+        }
+        .event-content p {
+            margin: 10px 0;
+        }
+        .event-content ul {
+            padding-left: 20px;
+        }
+        .event-image {
+            flex: 0 0 200px;
+            margin-left: 20px;
+        }
+        .event-image img {
+            max-width: 300px;
+            border-radius: 8px;
+        }
+        .register-button {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .register-button a {
+            display: inline-block;
+            padding: 10px 10px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .register-button a:hover {
+            background-color: #0056b3;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #333;
+            color: #fff;
+            margin-top: 20px;
+        }
+        
+        .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #1e90ff;
+    opacity: 90%;
+}
+
+
+/* Media Queries */
+@media (max-width: 480px) {
+            .logo {
+            font-size: 15px;
+            font-weight: bold;
+        }
+        
+            .sidenav {
+            height: 100%; /* 100% Full-height */
+            width: 0; /* 0 width - change this with JavaScript */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Stay on top */
+            top: 0; /* Stay at the top */
+            left: 0;
+            background-color: #111; /* Black*/
+            overflow-x: hidden; /* Disable horizontal scroll */
+            padding-top: 20px; /* Place content 60px from the top */
+            transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+            }
+
+            /* The navigation menu links */
+            .sidenav a {
+            padding: 4px 4px 4px 16px;
+            text-decoration: none;
+            font-size: 15px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+            }
+        }
+
+        /* Media Query for low resolution  Tablets, Ipads */
+        @media (min-width: 481px) and (max-width: 767px) {
+            .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+            .sidenav {
+            height: 100%; /* 100% Full-height */
+            width: 0; /* 0 width - change this with JavaScript */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Stay on top */
+            top: 0; /* Stay at the top */
+            left: 0;
+            background-color: #111; /* Black*/
+            overflow-x: hidden; /* Disable horizontal scroll */
+            padding-top: 20px; /* Place content 60px from the top */
+            transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+            }
+
+            /* The navigation menu links */
+            .sidenav a {
+            padding: 6px 6px 6px 20px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+            }
+        }
+
+        /* Media Query for Tablets Ipads portrait mode */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+        
+            .sidenav {
+            height: 100%; /* 100% Full-height */
+            width: 0; /* 0 width - change this with JavaScript */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Stay on top */
+            top: 0; /* Stay at the top */
+            left: 0;
+            background-color: #111; /* Black*/
+            overflow-x: hidden; /* Disable horizontal scroll */
+            padding-top: 50px; /* Place content 60px from the top */
+            transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+            }
+
+            /* The navigation menu links */
+            .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+            }
+        }
+
+        /* Media Query for Laptops and Desktops */
+        @media (min-width: 1025px) and (max-width: 1280px) {
+            .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+        
+            .sidenav {
+            height: 100%; /* 100% Full-height */
+            width: 0; /* 0 width - change this with JavaScript */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Stay on top */
+            top: 0; /* Stay at the top */
+            left: 0;
+            background-color: #111; /* Black*/
+            overflow-x: hidden; /* Disable horizontal scroll */
+            padding-top: 20px; /* Place content 60px from the top */
+            transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+            }
+
+            /* The navigation menu links */
+            .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+            }
+        }
+    </style>
+</head>
+<body style="background: url(/static/back-anther.jpg); opacity: 95%;">
+    <header>
+        <center>
+        <div class="logo" style="font-family: 'Courier New', Courier, monospace;">
+            <font color="#FF2626">E</font>
+            <font color="#667BC6">c</font>
+            <font color="#F1E5D1">l</font>
+            <font color="#FFD523">E</font>
+            <font color="#71EFA3">c</font>
+            <font color="#0F52BA">t</font>
+            <font color="#66CC66">i</font>
+            <font color="#FF9966">q</font>
+            <font color="#FFCCCC">u</font>
+            <font color="#00C1D4">E</font>
+            <font color="#EFE3D0">2k24</font>
+        <!-- <img src="/static/ecl.png" alt="" style="width: 5%; height: 5%;"> -->
+        </div></center>
+        <nav>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="{% url 'Home' %}">Home</a>
+                <a href="{% url 'workshop' %}">Workshop</a>
+                <a href="{% url 'tech' %}">Technical Events</a>
+                <a href="{% url 'non-tech' %}">Non-Technical Events</a>
+                <a href="{% url 'flashmob' %}">FlashMob</a>
+                <a href="{% url 'cultural' %}">Cultural Night</a>
+                <a href="{% url 'register' %}">Register</a>
+                <a href="{% url 'contact' %}">Contact</a>
+                <a href="{% url 'nav' %}">Loaction</a>
+              </div>
+        </nav>
+        <!-- Use any element to open the sidenav -->
+      <span onclick="openNav()"><img src="/static/icons8-menu-50 (1).png" alt="Home button" style="width: 35px; height: 35px;"></span>
+      <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+      }
+      
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+    </script>
+
+    </header>
+
+    <header1>
+        <center><h1>Non-Technical Events</h1></center>
+    </header1>
+
+    <div class="container">
+        <!-- Event 1: Pixel Party -->
+        <section class="event">
+            <div class="event-content">
+                <h2>1. Pixel Party</h2>
+                <p><strong>Participation Fee:</strong> 50/-</p>
+                <p>Pixel Party - Capture the moment, win big! Be part of this amazing online contest and showcase your photography talents on Instagram to win the highest number of likes. Don't let this opportunity slip away and flaunt your creative side!</p>
+                <ul>
+                    <li>👊 The contest ends on the 27th of February 2024!</li>
+                    <li>👊 You don't even have to be on campus to participate!</li>
+                    <li>👊 After registering, you'll receive a photo link through WhatsApp or email.</li>
+                    <li>👊 The lucky winner is going to receive some amazing prize money online!</li>
+                </ul>
+                <p>Pixel Party Instagram ID: pixelparty2k24</p>
+                <div class="contact">
+                    <p><strong>For Further Details Contact:</strong></p>
+                    <p>N. Hemanth Kumar - 8247214854</p>
+                    <p>K. Sneha</p>
+                </div>
+            </div>
+            <div class="event-image">
+                <img src="/static/pixel.png" alt="Pixel Party">
+            </div>
+            <div class="register-button">
+                <a href="register.html">Register Now</a>
+            </div>
+        </section>
+
+        <!-- Event 2: Art Mania -->
+        <section class="event">
+            <div class="event-content">
+                <h2>2. Art Mania</h2>
+                <p><strong>Venue:</strong> Academic Block-1</p>
+                <p><strong>Participation Fee:</strong> 30/-</p>
+                <p>Art Mania! Come and experience an incredible art exhibition featuring Sketch Art and Art Craft! Your stunning masterpieces will be proudly displayed in our exhibition room for two mesmerizing days. The art that captures the most hearts will be crowned the champion!</p>
+                <p>🎭 Join us on February 26th and 27th, 2024, at Academic Block-1! Share your creativity at this amazing artistic extravaganza for only ₹30.</p>
+                <ul>
+                    <li>🎨 Winners for Sketch art and Art crafts will be chosen based on viewers' voting.</li>
+                    <li>🎨 The artwork with the most votes will be crowned the winner!</li>
+                </ul>
+                <div class="contact">
+                    <p><strong>For Further Details Contact:</strong></p>
+                    <p>K. Vijay - 8897475935</p>
+                    <p>D. Hanika Sai</p>
+                </div>
+            </div>
+            <div class="event-image">
+                <img src="/static/art.png" alt="Art Mania">
+            </div>
+            <div class="register-button">
+                <a href="register.html">Register Now</a>
+            </div>
+        </section>
+
+        <!-- Event 3: Mystic Hunt -->
+        <section class="event">
+            <div class="event-content">
+                <h2>3. Mystic Hunt</h2>
+                <p><strong>Venue:</strong> Academic Block-1</p>
+                <p><strong>Participation Fee:</strong></p>
+                <ul>
+                    <li>Individual: 80₹</li>
+                    <li>Team of two members: 160₹</li>
+                    <li>Team of four members: 300₹</li>
+                </ul>
+                <p>💂 Join us for an amazing journey at our Mystic Hunt! Discover the hidden clues, explore every corner, and be the ultimate winner of the priceless treasure! Be a part of an exciting event on February 26th, 2024, at Academic Block-1!</p>
+                <p>Get your friends together for a quest that you will never forget!</p>
+                <ul>
+                    <li>🏴‍☠️ The first clue is like a thrilling puzzle that points you to a specific location. It could be a bustling street, a famous landmark, or anything intriguing! And remember, not everything on the clue sheet will become clear until you and your amazing team reach that clue location. It's like unwrapping a mystery!</li>
+                    <li>🏴‍☠️ The second clue takes you to yet another fascinating location, where you'll uncover even more valuable information for the next clue. It's like an exhilarating treasure hunt within a treasure hunt!</li>
+                    <li>🏴‍☠️ This incredible chain of clues keeps unfolding, forming a captivating narrative that guides you step by step towards the ultimate prize. It's like being part of an epic adventure, where each clue brings you closer and closer to the coveted treasure.</li>
+                    <li>🏴‍☠️ The final clue is here, and it holds the key to unlocking the hidden treasure! This is the moment you've been waiting for - the grand reveal! Brace yourself for the exhilaration as the treasure is finally unveiled!</li>
+                </ul>
+                <p>Get ready to embark on an epic journey filled with excitement, mystery, and the thrill of solving clues. The treasure is calling, and you're about to uncover its hidden secrets! Join us to begin the adventure!</p>
+                <p><strong>RULES to Follow:</strong></p>
+                <ul>
+                    <li>📜 The rules for a treasure hunt are crafted to ensure a fair and exhilarating experience for all!</li>
+                    <li>📜 Your incredible team will never be tasked with engaging in any illegal activities or trespassing into restricted areas.</li>
+                    <li>📜 Do not attempt any activities on your own.</li>
+                    <li>📜 It is of utmost importance that you show utmost respect and admiration for all fellow participants in this extraordinary treasure hunt!</li>
+                </ul>
+                <div class="contact">
+                    <p><strong>For Further Details Contact:</strong></p>
+                    <p>V. Lakshak - 9963467839</p>
+                    <p>K. Sharvani</p>
+                </div>
+            </div>
+            <div class="event-image">
+                <img src="/static/mystic.png" alt="Mystic Hunt">
+            </div>
+            <div class="register-button">
+                <a href="{% url 'register' %}">Register Now</a>
+            </div>
+        </section>
+
+        <!-- Event 4: Blink Brain -->
+        <section class="event">
+            <div class="event-content">
+                <h2>4. Blink Brain</h2>
+                <p><strong>Venue:</strong> Academic Block-1</p>
+                <p><strong>Participation Fee:</strong> 50/-</p>
+                <p>Get excited for the ultimate brain challenge at Blink Brain! Brace yourself for an awe-inspiring event, where a room will be filled with numerous intriguing objects for you to memorize. Armed with just a trusty pen and paper, you will embark on an exhilarating mission to quickly document every single item in record time.</p>
+                <p>Brace yourself for the ultimate challenge on February 26th and 27th, 2024, at Academic Block-1., as the participant who flawlessly recollects all the objects in the quickest amount of time will triumphantly claim the title of victory!</p>
+                <p><strong>Procedure of event:</strong></p>
+                <ul>
+                    <li>🖋️ Participants get to stay in the room for 30 seconds.</li>
+                    <li>🖋️ Participants will have one minute to write down all the objects they remember!</li>
+                    <li>🖋️ There will be a minimum of 25 objects in the room!</li>
+                    <li>🖋️ The participant who manages to write down the most object names in that given time will be crowned the winner of the event!</li>
+                </ul>
+                <p><strong>Important to Note:</strong></p>
+                <ul>
+                    <li>📝 Mobile phones are strictly off-limits during the event.</li>
+                    <li>📝 No additional time will be allotted.</li>
+                    <li>📝 Breaking the rules could lead to disqualification.</li>
+                </ul>
+                <div class="contact">
+                    <p><strong>For Further Details Contact:</strong></p>
+                    <p>P.J.D Praveen - 7093868436</p>
+                    <p>B. Harshitha</p>
+                </div>
+            </div>
+            <div class="event-image">
+                <img src="/static/blink.png" alt="Blink Brain">
+            </div>
+            <div class="register-button">
+                <a href="register.html">Register Now</a>
+            </div>
+        </section>
+
+        <!-- Event 5: Quiz IQ -->
+        <section class="event">
+            <div class="event-content">
+                <h2>5. Quiz IQ</h2>
+                <p><strong>Venue:</strong> Academic Block-1</p>
+                <p><strong>Participation Fee:</strong> 50/-</p>
+                <p>Quiz IQ, an amazing journey of knowledge! Experience the thrill of solving captivating puzzles and uncovering hidden insights and wisdom. Get ready to face unique challenges that will ignite your curiosity and test your intellect. Join us on February 27th 2024 at Academic Block-1 for an exhilarating test of your IQ.</p>
+                <p><strong>Structure of the Event:</strong></p>
+                <ul>
+                    <li>🧠 Round 1: Participants will take the MCQ test individually and separately.</li>
+                    <li>🧠 Round 2: Qualified participants will answer hypothesizing questions in their assigned groups led by coordinators.</li>
+                    <li>🧠 Round 3: The best-performing groups from the previous round will get to participate in an exciting rapid-fire round.</li>
+                </ul>
+                <p><strong>Eligibility:</strong> Open to all engineering students! Any degree level is welcome! from the first year to the final year.</p>
+                <p><strong>Certification:</strong> All participants will receive a participation certificate.</p>
+                <div class="note">
+                    <p><strong>Attention Participants!</strong></p>
+                    <ul>
+                        <li>🌎 Groups will be created by the coordinator.</li>
+                        <li>🌎 Creating your group is unacceptable.</li>
+                    </ul>
+                </div>
+                <p><strong>Mark your Calendars to begin the adventure</strong></p>
+                <div class="contact">
+                    <p><strong>For Further Details Contact:</strong></p>
+                    <p>A. Prasad - 9963415756</p>
+                    <p>M. Roshini</p>
+                </div>
+            </div>
+            <div class="event-image">
+                <img src="/static/iq.png" alt="Quiz IQ">
+            </div>
+            <div class="register-button">
+                <a href="register.html">Register Now</a>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Eclectique 2k24, All Rights Reserved.</p>
+        <p>Desgined & Developed by: K.Kartheek</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coordinator Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f9fc;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .header {
+            background: linear-gradient(to right, #6c7ae0, #4fc3a1);
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+            color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        .header h2 {
+            margin: 10px 0 0 0;
+            font-weight: normal;
+        }
+
+        .table-wrapper {
+            margin: 20px;
+            overflow-x: auto;
+            box-shadow: 0 2px 15px rgba(64, 64, 64, 0.1);
+            border-radius: 8px;
+            background-color: #fff;
+        }
+
+        .fl-table {
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: normal;
+            border: none;
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 100%;
+            white-space: nowrap;
+            background-color: white;
+        }
+
+        .fl-table th, .fl-table td {
+            text-align: center;
+            padding: 12px 15px;
+        }
+
+        .fl-table th {
+            color: #ffffff;
+            background: #4fc3a1;
+        }
+
+        .fl-table tr:nth-child(even) {
+            background: #f8f8f8;
+        }
+
+        .fl-table thead tr {
+            background: #6c7ae0;
+        }
+
+        .fl-table thead th {
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .fl-table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        @media (max-width: 767px) {
+            .fl-table {
+                display: block;
+                width: 100%;
+            }
+            .table-wrapper:before {
+                content: "Scroll horizontally >";
+                display: block;
+                text-align: right;
+                font-size: 11px;
+                color: #333;
+                padding: 0 0 10px;
+            }
+            .fl-table thead, .fl-table tbody, .fl-table thead th {
+                display: block;
+            }
+            .fl-table thead th:last-child {
+                border-bottom: none;
+            }
+            .fl-table thead {
+                float: left;
+            }
+            .fl-table tbody {
+                width: auto;
+                position: relative;
+                overflow-x: auto;
+            }
+            .fl-table td, .fl-table th {
+                padding: 20px .625em .625em .625em;
+                height: 40px;
+                vertical-align: middle;
+                box-sizing: border-box;
+                overflow-x: hidden;
+                overflow-y: auto;
+                width: 120px;
+                font-size: 13px;
+                text-overflow: ellipsis;
+            }
+            .fl-table thead th {
+                text-align: left;
+                border-bottom: 1px solid #f7f7f9;
+            }
+            .fl-table tbody tr {
+                display: table-cell;
+            }
+            .fl-table tbody tr:nth-child(odd) {
+                background: none;
+            }
+            .fl-table tr:nth-child(even) {
+                background: transparent;
+            }
+            .fl-table tr td:nth-child(odd) {
+                background: #f8f8f8;
+                border-right: 1px solid #e6e4e4;
+            }
+            .fl-table tr td:nth-child(even) {
+                border-right: 1px solid #e6e4e4;
+            }
+            .fl-table tbody td {
+                display: block;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .fl-table {
+                display: block;
+                width: 100%;
+            }
+            .table-wrapper:before {
+                content: "Scroll horizontally >";
+                display: block;
+                text-align: right;
+                font-size: 11px;
+                color: #333;
+                padding: 0 0 10px;
+            }
+            .fl-table thead, .fl-table tbody, .fl-table thead th {
+                display: block;
+            }
+            .fl-table thead th:last-child {
+                border-bottom: none;
+            }
+            .fl-table thead {
+                float: left;
+            }
+            .fl-table tbody {
+                width: auto;
+                position: relative;
+                overflow-x: auto;
+            }
+            .fl-table td, .fl-table th {
+                padding: 20px .625em .625em .625em;
+                height: 30px;
+                vertical-align: middle;
+                box-sizing: border-box;
+                overflow-x: hidden;
+                overflow-y: auto;
+                width: 80px;
+                font-size: 13px;
+                text-overflow: ellipsis;
+            }
+            .fl-table thead th {
+                text-align: left;
+                border-bottom: 1px solid #f7f7f9;
+            }
+            .fl-table tbody tr {
+                display: table-cell;
+            }
+            .fl-table tbody tr:nth-child(odd) {
+                background: none;
+            }
+            .fl-table tr:nth-child(even) {
+                background: transparent;
+            }
+            .fl-table tr td:nth-child(odd) {
+                background: #f8f8f8;
+                border-right: 1px solid #e6e4e4;
+            }
+            .fl-table tr td:nth-child(even) {
+                border-right: 1px solid #e6e4e4;
+            }
+            .fl-table tbody td {
+                display: block;
+                text-align: center;
+            }
+        }
+                .footer {
+            background: #415e55;
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+            .footer p {
+                margin: 5px 0;
+                font-size: 14px;
+            }
+
+            .footer p:first-child {
+                font-weight: bold;
+            }
+
+            .footer p:last-child {
+                font-style: italic;
+                font-size: 13px;
+            }
+            /* Style the button element */
+            button {
+            background-color: #d6540d; /* Green background */
+            border: none; /* Remove borders */
+            color: white; /* White text */
+            padding: 7px 20px; /* Some padding */
+            text-align: center; /* Center the text */
+            text-decoration: none; /* Remove underline */
+            display: inline-block; /* Display as inline-block */
+            font-size: 16px; /* Set a font size */
+            margin: 4px 2px; /* Some margin */
+            cursor: pointer; /* Pointer/hand icon */
+            border-radius: 12px; /* Rounded corners */
+            }
+
+            /* Style the link inside the button */
+            button a {
+            color: white; /* White text */
+            text-decoration: none; /* Remove underline */
+            }
+
+            button:hover {
+            background-color: #913503; /* Darker green background on hover */
+            }
+
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Welcome To {{name}} Dashboard</h1>
+        <button type="button" style="background-color:palevioletred;"><a href="{% url 'Home' %}">Home</a></button>
+        <button type="button" class="btn btn-primary">
+            Registrations: <span class="badge badge-light" style="background-color: white; color: rgb(0, 0, 0);">{{count}}</span>
+        </button>
+        
+        <button type="button"><a href="{% url 'download' name %}">Download</a></button>
+    </div>
+
+    <div class="table-wrapper">
+        <table class="fl-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>College</th>
+                    <th>Phone</th>
+                    <th>Year</th>
+                    <th>Branch</th>
+                    <th>Gender</th>
+                    <th>Food</th>
+                    <th>Event</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for r in registrations %}
+                <tr>
+                    <td>{{r.name}}</td>
+                    <td>{{r.email}}</td>
+                    <td>{{r.college}}</td>
+                    <td>{{r.phone}}</td>
+                    <td>{{r.year}}</td>
+                    <td>{{r.branch}}</td>
+                    <td>{{r.gender}}</td>
+                    <td>{{r.food}}</td>
+                    <td>{{r.event}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Eclectique 2k24, All Rights Reserved.</p>
+        <p>Desgined & Developed by: K.Kartheek</p>
+    </footer>
+</body>
+</html>
